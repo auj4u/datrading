@@ -1,3 +1,52 @@
-# Algo Trading Platform Starter
+// src/pages/Home.jsx
 
-Deployed with FastAPI + React + Tailwind.
+import React from 'react';
+
+const Home = () => {
+  return (
+    <div className="min-h-screen bg-gray-100 text-gray-800 font-sans">
+      {/* Hero Section */}
+      <section className="text-center py-20 bg-white shadow-md">
+        <h1 className="text-5xl font-bold mb-4">🚀 Algo Trading Made Easy</h1>
+        <p className="text-xl mb-6">Backtest. Simulate. Trade. All in one place.</p>
+        <button className="bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700">
+          Get Started
+        </button>
+      </section>
+
+      {/* Features */}
+      <section className="py-16 px-6 grid grid-cols-1 md:grid-cols-3 gap-8 bg-gray-50">
+        {[
+          { title: '📊 Backtesting', desc: 'Run your strategies on historical data.' },
+          { title: '🧪 Paper Trading', desc: 'Simulate trades without real money.' },
+          { title: '📤 Live Trading', desc: 'Connect to brokers and go live.' }
+        ].map((f, idx) => (
+          <div key={idx} className="p-6 bg-white rounded-lg shadow">
+            <h3 className="text-xl font-bold mb-2">{f.title}</h3>
+            <p>{f.desc}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* How It Works */}
+      <section className="py-16 text-center bg-white">
+        <h2 className="text-3xl font-bold mb-6">How It Works</h2>
+        <div className="flex flex-col md:flex-row justify-center gap-10 px-6">
+          {['Build Strategy', 'Backtest', 'Deploy'].map((step, idx) => (
+            <div key={idx} className="text-center">
+              <div className="text-5xl mb-2">🔁</div>
+              <p className="text-lg font-medium">{step}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white text-center py-6">
+        <p>© 2025 AlgoTrader. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+};
+
+export default Home;
